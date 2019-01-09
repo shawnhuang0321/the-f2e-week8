@@ -1,0 +1,123 @@
+.calculating-3 {
+  background: $lightPink;
+  
+  .content {
+    opacity: 0;
+    transition: all 1s linear;
+
+    .title {
+      position: relative;
+      color: $light;
+      font-size: 64px;
+    }
+
+    .subtitle {
+      color: $light;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  @mixin circle($scaleParam, $color, $bottomPosition, $rightPosition, $rotateDeg) {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background: $color;
+    position: absolute;
+    bottom: $bottomPosition;
+    right: $rightPosition;
+    transform: rotate($rotateDeg) scale($scaleParam);
+  }
+
+  .circle-1 {
+    @include circle(1, $light, -30%, 80%, 45deg);
+
+    animation: circle-1-slide 1s linear .7s forwards;
+  }
+
+  @keyframes circle-1-slide {
+    100% {
+      bottom: 80%;
+      right: -30%;
+    }
+  }
+
+  .circle-2 {
+    @include circle(1.5, $dark, -30%, 80%, 0deg);
+    
+    animation: circle-2-slide 1s linear .5s forwards;
+  }
+
+  @keyframes circle-2-slide {
+    100% {
+      bottom: 80%;
+      right: -30%;
+    }
+  }
+
+  .circle-3 {
+    @include circle(.8, $lightPink, -30%, 40%, -70deg);
+    
+    animation: circle-3-slide .8s linear 1s forwards;
+  }
+
+  @keyframes circle-3-slide {
+    100% {
+      bottom: 40%;
+      right: -30%;
+    }
+  }
+
+  .circle-4 {
+    @include circle(1, $strongBlue, -40%, 100%, -70deg);
+    
+    animation: circle-4-slide 1.4s linear .5s forwards;
+  }
+
+  @keyframes circle-4-slide {
+    100% {
+      bottom: 100%;
+      right: -40%;
+    }
+  }
+
+  .circle-5 {
+    @include circle(1.2, $light, 40%, 140%, -70deg);
+    
+    animation: circle-5-slide .8s linear 1s forwards;
+  }
+
+  @keyframes circle-5-slide {
+    100% {
+      bottom: 140%;
+      right: 40%;
+    }
+  }
+
+  .circle-6 {
+    @include circle(1.3, $strongBlue, 10%, 130%, 0deg);
+    
+    animation: circle-6-slide 2s linear .2s forwards;
+  }
+
+  @keyframes circle-6-slide {
+    100% {
+      bottom: 130%;
+      right: 10%;
+    }
+  }
+
+  .circle-7 {
+    @include circle(18, $light, -170%, 270%, -70deg);
+    
+    z-index: 5;
+    animation: circle-7-slide 2s linear 2.5s forwards;
+  }
+
+  @keyframes circle-7-slide {
+    100% {
+      bottom: 270%;
+      right: -170%;
+    }
+  }
+}

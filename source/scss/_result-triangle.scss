@@ -1,0 +1,293 @@
+.result-triangle {
+  background: $primary;
+  opacity: 0;
+  transition: all 1.5s linear;
+  display: flex;
+  justify-content: flex-start;
+
+  .content {
+    margin-top: 219px;
+    max-width: 380px;
+    opacity: 0;
+    transition: all 1.5s linear;
+    // animation: result-tri-content 1.5s ease-out 0s forwards;
+
+    .title {
+      position: relative;
+      color: $light;
+      font-size: 64px;
+      margin-top: 8px;
+    }
+
+    .subtitle {
+      color: $light;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    .inner {
+      opacity: 0;
+      transition: all 1.5s linear;
+
+      h2 {
+        font-size: 36px;
+        color: $strongBlue;
+        margin-top: 40px;
+        margin-left: 74.2px;
+        line-height: 48px;
+      }
+
+      p {
+        font-size: 20px;
+        color: $light;
+        margin-top: 40px;
+        line-height: 36px;
+      }
+
+      button.reload {
+        font-size: 20px;
+        margin-top: 40px;
+        width: 100%;
+        height: 56px;
+        border: 2px solid $light;
+        border-radius: 30.5px;
+        background: transparent;
+        color: $light;
+        text-align: center;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &:hover {
+          background: $light;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  @mixin bg-tri($topPosition, $leftPosition, $color) {
+    position: absolute;
+    top: $topPosition;
+    left: $leftPosition;
+    border-style: solid;
+    border-width: 0 28px 48px 28px;
+    border-color: transparent transparent $color transparent;
+    transform: rotate(180deg);
+  }
+
+  .bg-triangle {
+
+    .tri-1 {
+      @include bg-tri(314px, 40px, $dark);
+      // animation: result-bg-tri-moveout 2s ease-out 0s forwards;
+    }
+    .tri-2 {
+      @include bg-tri(-12px, 117px, $dark);
+      // animation: result-bg-tri-moveout 2s ease-out 0s forwards;
+    }
+    .tri-3 {
+      @include bg-tri(432px, 243px, $strongBlue);
+      // animation: result-bg-tri-movement 2s ease-out 0s forwards;
+    }
+    .tri-4 {
+      @include bg-tri(171px, 271px, $strongBlue);
+      // animation: result-bg-tri-movement-2 2s ease-out 0s forwards;
+    }
+    .tri-5 {
+      @include bg-tri(36px, 672px, $strongBlue);
+      // animation: result-bg-tri-movement-3 2s ease-out 0s forwards;
+    }
+    .tri-6 {
+      @include bg-tri(360px, 774px, $dark);
+      // animation: result-bg-tri-moveout 2s ease-out 0s forwards;
+    }
+    .tri-7 {
+      @include bg-tri(255px, 957px, $strongBlue);
+      // animation: result-bg-tri-moveout 2s ease-out 0s forwards;
+    }
+  }
+
+  .triangle-1 {
+    border-style: solid;
+    border-width: 0 240px 417px 240px;
+    border-color: transparent transparent $strongBlue transparent;
+    position: absolute;
+    top: 418px;
+    left: 272px;
+    z-index: 2;
+    // animation: result-tri-movement 2s ease-out 0s forwards;
+  }
+
+  .triangle-2 {
+    -webkit-text-stroke: 4px $light;
+    -webkit-text-fill-color: transparent;
+    font-size: 520px;
+    position: absolute;
+    top: 235px;
+    left: 285px;
+    z-index: 1;
+    // animation: result-tri-movement-light 2.5s ease-out 0s forwards;
+  }
+
+  .triangle-3 {
+    border-style: solid;
+    border-width: 0 240px 417px 240px;
+    border-color: transparent transparent $dark transparent;
+    position: absolute;
+    top: 480px;
+    left: 365px;
+    z-index: 0;
+    // animation: result-tri-movement-dark 2s ease-out 0s forwards;
+  }
+}
+
+@keyframes result-tri-slidein {
+  0% {
+    transform: translateY(400px);
+  }
+  50% {
+    transform: translateY(400px);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.result-tri-slidein {
+  animation: result-tri-slidein 8s ease-out 0s forwards;
+}
+
+.result-tri-2-slidein {
+  animation: result-tri-slidein 8.2s ease-out 0s forwards;
+}
+
+@keyframes result-bg-tri-slidein {
+  0% {
+    transform: rotate(180deg) translateY(600px);
+  }
+  50% {
+    transform: rotate(180deg) translateY(600px);
+  }
+  100% {
+    transform: rotate(180deg) translateY(0px);
+  }
+}
+
+.result-bg-tri-sildein {
+  animation: result-bg-tri-slidein 6s ease-out 0s forwards;
+}
+
+.result-bg-tri-sildein-2 {
+  animation: result-bg-tri-slidein 7s ease-out 0s forwards;
+}
+
+.result-bg-tri-sildein-3 {
+  animation: result-bg-tri-slidein 7.5s ease-out 0s forwards;
+}
+
+// result-2
+@keyframes result-tri-content {
+  0% {
+    text-align: start;
+  }
+  100% {
+    text-align: start;
+    margin-top: 81px;
+    transform: translateX(200px);
+  }
+}
+
+.result-tri-content {
+  animation: result-tri-content 1.5s ease-out 0s forwards;
+}
+
+@keyframes result-tri-movement {
+  100% {
+    top: 299px;
+    left: 122px;
+    border-width: 0 174px 300px 174px;
+  }
+}
+
+.result-tri-movement {
+  animation: result-tri-movement 2s ease-out 0s forwards;
+}
+
+@keyframes result-tri-movement-light {
+  100% {
+    top: 75px;
+    left: 140px;
+    font-size: 400px;
+    transform: rotate(80deg);
+  }
+}
+
+.result-tri-movement-light {
+  animation: result-tri-movement-light 2.5s ease-out 0s forwards;
+}
+
+@keyframes result-tri-movement-dark {
+  100% {
+    top: 150px;
+    left: 185px;
+    transform: rotate(40deg);
+    border-width: 0 174px 300px 174px;
+  }
+}
+
+.result-tri-movement-dark {
+  animation: result-tri-movement-dark 2s ease-out 0s forwards;
+}
+
+// result bg-tri movement
+@keyframes result-bg-tri-movement {
+  100% {
+    top: 240px;
+    left: 522px;
+    transform: rotate(180deg);
+  }
+}
+
+.result-bg-tri-movement {
+  animation: result-bg-tri-movement 2s ease-out 0s forwards;
+}
+
+@keyframes result-bg-tri-movement-2 {
+  100% {
+    top: 328px;
+    left: 522px;
+    transform: rotate(180deg);
+  }
+}
+
+.result-bg-tri-movement-2 {
+  animation: result-bg-tri-movement-2 2s ease-out 0s forwards;
+}
+
+@keyframes result-bg-tri-movement-3 {
+  100% {
+    top: 416px;
+    left: 522px;
+    transform: rotate(180deg);
+  }
+}
+
+.result-bg-tri-movement-3 {
+  animation: result-bg-tri-movement-3 2s ease-out 0s forwards;
+}
+
+@keyframes result-bg-tri-moveout {
+  0% {
+    transform: rotate(180deg) translateY(0px);
+  }
+  100% {
+    transform: rotate(180deg) translateY(600px);
+  }
+}
+
+.result-bg-tri-moveout {
+  animation: result-bg-tri-moveout 2s ease-out 0s forwards;
+}

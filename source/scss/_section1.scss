@@ -1,0 +1,141 @@
+.section1 {
+  background: $primary;
+
+  .title {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+
+    h1 {
+      color: $light;
+      font-size: 64px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 36px;
+      color: $light;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+  
+  .circle {
+    position: relative;
+    width: 539px;
+    height: 534px;
+    border-radius: 100%;
+    background: $strongBlue;
+    z-index: 1;
+  }
+
+  .triangle {
+    position: absolute;
+    width: 539px;
+    height: 534px;
+    z-index: 1;
+  }
+
+  .square {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    background-color: $dark;
+    z-index: 0;
+  }
+
+  .top, .bottom {
+    position: absolute;
+    margin: 82px 87px 139px;
+    border-style: solid;
+    border-width: 0 182.5px 313px 182.5px;
+    border-color: transparent transparent $lightPink transparent;
+  }
+  .bottom {
+    transform: rotate(180deg);
+    margin-top: 139px;
+    margin-bottom: 82px;
+  }
+}
+
+// => appear
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-alternate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tri-rotate {
+  animation: rotate-alternate 4s ease-out 0s forwards;
+}
+
+.circle-scale {
+  animation: scale 4s linear 0s forwards;
+}
+
+.square-rotate {
+  animation: rotate 4s ease-out 0s forwards;
+}
+
+// => disappear
+@keyframes square-scale-out {
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+
+@keyframes circle-scale-out {
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+
+@keyframes triangle-scale-out {
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes section1-fadeout {
+  100% {
+    opacity: 0;
+  }
+}
+
+.square-scale-out {
+  animation: square-scale-out 1s ease-out 0s forwards;
+}
+
+.circle-scale-out {
+  animation: circle-scale-out 1s ease-out .2s forwards;
+}
+
+.tri-scale-out {
+  animation: triangle-scale-out 1s ease-out .4s forwards;
+}
+
+.section1-fadeout {
+  animation: section1-fadeout .8s ease-out .6s forwards;
+}

@@ -1,0 +1,117 @@
+.section3 {
+  @include questionMainArea($strongBlue, $lightPink, $light, $primary);
+  @include questionSideArea($lightPink, $primary, $dark, $light);
+  flex-direction: row-reverse;
+  .square {
+    top: 997.6px;
+    left: -228.3px;
+    width: 340px;
+    height: 340px;
+    transform: rotate(54deg);
+  }
+
+  .circle {
+    top: 1224px;
+    left: 116px;
+    width: 191px;
+    height: 191px;
+  }
+
+  .triangle {
+    top: 1000px;
+    left: 63px;
+    border-width: 0 140px 242.5px 140px;
+    transform: rotate(148deg);
+  }
+
+  .main {
+    width: 1024px;
+    transition: all .5s linear;
+
+    .content {
+      opacity: 0;
+      transition: all .5s linear;
+    }
+  }
+
+  .side {
+    width: 0px;
+    transition: all .5s linear;
+  }
+}
+
+// => slide in
+@keyframes sec3-square-slidein {
+  100% {
+    top: 197.6px;
+  }
+}
+
+.sec3-square-sildein {
+  animation: sec3-square-slidein 1s ease-out 1s forwards;
+}
+
+@keyframes sec3-triangle-slidein {
+  100% {
+    top: -43.1px;
+  }
+}
+
+.sec3-tri-sildein {
+  animation: sec3-triangle-slidein 1s ease-out 1s forwards;
+}
+
+@keyframes sec3-circle-slidein {
+  100% {
+    top: 424px;
+  }
+}
+
+.sec3-circle-sildein {
+  animation: sec3-circle-slidein 1s ease-out 1s forwards;
+}
+
+// =>animation
+@keyframes sec3-square-rotate {
+  0% {
+    top: 197.6px;
+  }
+  100% {
+    transform: rotate(414deg);
+    top: 197.6px;
+  }
+}
+
+.sec3-square-rotate {
+  animation: sec3-square-rotate 4s linear 0s infinite;
+}
+
+@keyframes sec3-triangle-rotate {
+  0% {
+    top: -43.1px;
+  }
+  100% {
+    transform: rotate(-212deg);
+    top: -43.1px;
+  }
+}
+
+.sec3-tri-rotate {
+  animation: sec3-triangle-rotate 3.5s linear 0s infinite;
+}
+
+@keyframes sec3-circle-scale {
+  0% {
+    top: 424px;
+  }
+  50% {
+    top: 484px;
+  }
+  100% {
+    top: 424px;
+  }
+}
+
+.sec3-circle-scale {
+  animation: sec3-circle-scale 3s linear 0s infinite;
+}
